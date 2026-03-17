@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  color: white;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+  url("https://images.unsplash.com/photo-1509042239860-f550ce710b93");
+  background-size: cover;
+  background-position: center;
+}
+h1 {
+  color: gold;
+}
+
+p {
+  font-size: 18px;
+}
+.item {
+  display: inline-block;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+}

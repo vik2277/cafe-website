@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BrewTown Café</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Welcome to BrewTown Café ☕</h1>
+<p>Scan. Order. Relax.</p>
+
+<h2>Menu</h2>
+
+<div class="item"><h3>Tea</h3><p>₹20</p><button onclick="addItem('Tea')">Add</button></div>
+<div class="item"><h3>Black Coffee</h3><p>₹50</p><button onclick="addItem('Black Coffee')">Add</button></div>
+<div class="item"><h3>Cold Coffee</h3><p>₹80</p><button onclick="addItem('Cold Coffee')">Add</button></div>
+<div class="item"><h3>Veg Sandwich</h3><p>₹60</p><button onclick="addItem('Veg Sandwich')">Add</button></div>
+<div class="item"><h3>Cheese Sandwich</h3><p>₹90</p><button onclick="addItem('Cheese Sandwich')">Add</button></div>
+<div class="item"><h3>French Fries</h3><p>₹70</p><button onclick="addItem('French Fries')">Add</button></div>
+<div class="item"><h3>Burger</h3><p>₹90</p><button onclick="addItem('Burger')">Add</button></div>
+<div class="item"><h3>Maggie</h3><p>₹50</p><button onclick="addItem('Maggie')">Add</button></div>
+<div class="item"><h3>Cold Drink</h3><p>₹40</p><button onclick="addItem('Cold Drink')">Add</button></div>
+<div class="item"><h3>Lemon Tea</h3><p>₹30</p><button onclick="addItem('Lemon Tea')">Add</button></div>
+<div class="item"><h3>Green Tea</h3><p>₹40</p><button onclick="addItem('Green Tea')">Add</button></div>
+<div class="item"><h3>Milkshake</h3><p>₹90</p><button onclick="addItem('Milkshake')">Add</button></div>
+<div class="item"><h3>Toast Butter</h3><p>₹40</p><button onclick="addItem('Toast Butter')">Add</button></div>
+<div class="item"><h3>Chocolate Coffee</h3><p>₹95</p><button onclick="addItem('Chocolate Coffee')">Add</button></div>
+<div class="item"><h3>Ice Cream</h3><p>₹60</p><button onclick="addItem('Ice Cream')">Add</button></div>
+
+<h2>Cart</h2>
+<ul id="cart"></ul>
+
+<button onclick="placeOrder()">Order Now</button>
+
+
+</body>
+<script src="script.js"></script>
+</html>
