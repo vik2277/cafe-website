@@ -1,3 +1,26 @@
+let cart = [];
+
+function addItem(item) {
+  cart.push(item);
+  displayCart();
+}
+
+function displayCart() {
+  let list = document.getElementById("cart");
+  list.innerHTML = "";
+
+  cart.forEach(function(item, index) {
+    let li = document.createElement("li");
+    li.innerHTML = item + " <button onclick='removeItem(" + index + ")'>Remove</button>";
+    list.appendChild(li);
+  });
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  displayCart();
+}
+
 function placeOrder() {
 
   if (cart.length === 0) {
@@ -5,25 +28,18 @@ function placeOrder() {
     return;
   }
 
-  let table = "Unknown";
-
-  // Use search params (best method)
   let params = new URLSearchParams(window.location.search);
-  let t = params.get("table");
+  let table = params.get("table") || "Unknown";
 
-  if (t === "1" || t === "2" || t === "3") {
-    table = t;
-  }
-
-  let message = "New Order (Table " + table + "):%0A";
+  let message = "New Order (Table " + table + "):\n";
 
   cart.forEach(function(item) {
-    message += "- " + item + "%0A";
+    message += "- " + item + "\n";
   });
 
-  let phone = "916295943675";
+  let phone = "919876543210";
 
-  let url = "https://wa.me/" + phone + "?text=" + message;
+  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
   window.open(url, "_blank");
 }
