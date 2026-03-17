@@ -37,7 +37,7 @@ function placeOrder() {
     message += "- " + item + "\n";
   });
 
-  let phone = "919876543210";
+  let phone = "916295943675";
 
   let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
