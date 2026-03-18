@@ -3,6 +3,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
+
+  padding-bottom: 100px; /* 🔥 FIX: prevents content hiding behind button */
 }
 
 /* HEADER */
@@ -38,22 +40,22 @@ p {
   text-align: center;
   backdrop-filter: blur(10px);
   transition: 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4); /* 🔥 NEW */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 .menu-item:hover {
   transform: scale(1.05);
 }
 
-/* IMAGE FIX */
+/* IMAGE */
 .menu-item img {
   width: 100%;
-  height: 160px; /* slightly better */
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-/* BUTTON */
+/* NORMAL BUTTON */
 button {
   background: gold;
   color: black;
@@ -68,7 +70,7 @@ button {
 
 button:hover {
   background: orange;
-  transform: scale(1.1); /* 🔥 smooth effect */
+  transform: scale(1.1);
 }
 
 /* CART */
@@ -77,10 +79,33 @@ button:hover {
   padding: 15px;
   margin: 20px;
   border-radius: 10px;
-  list-style: none; /* 🔥 removes bullets */
+  list-style: none;
 }
 
-/* CART ITEMS */
 #cart li {
   margin: 5px 0;
+}
+
+/* 🔥 ORDER BUTTON (FIXED + PREMIUM) */
+.order-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  padding: 15px;
+  font-size: 18px;
+  background: orange;
+  color: black;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* 🔥 MISSING HOVER FIX */
+.order-btn:hover {
+  background: gold;
 }
