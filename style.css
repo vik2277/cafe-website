@@ -8,8 +8,9 @@ body {
 /* HEADER */
 h1 {
   text-align: center;
-  color: gold;
-  margin-top: 20px;
+  color: #ffb347;
+  font-size: 34px;
+  letter-spacing: 2px;
 }
 
 h2 {
