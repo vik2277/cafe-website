@@ -119,7 +119,7 @@
     <button onclick="addToCart('Ice Cream',60)">Add</button>
   </div>
 
-</div> <!-- ✅ MENU CLOSED HERE -->
+</div> <!-- MENU CLOSED -->
 
 <h2>Cart</h2>
 <ul id="cart"></ul>
@@ -146,7 +146,7 @@ function placeOrder() {
         return;
     }
 
-    let message = "🧾 *New Order*\n\n";
+    let message = "🧾 New Order\n\n";
     let total = 0;
 
     cart.forEach((item, index) => {
@@ -156,8 +156,7 @@ function placeOrder() {
 
     message += "\n💰 Total: ₹" + total;
 
-    // 👉 CHANGE THIS NUMBER
-    let phone = "916295943675";
+    let phone = "916295943675"; // your number
 
     let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
