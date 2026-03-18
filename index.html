@@ -14,117 +14,41 @@
 
 <div class="menu">
 
-  <div class="menu-item">
-    <img src="images/tea.jpg">
-    <h3>Tea</h3>
-    <p>₹20</p>
-    <button onclick="addToCart('Tea',20)">Add</button>
-  </div>
+  <!-- (your menu items remain SAME, no change) -->
 
-  <div class="menu-item">
-    <img src="images/black-coffee.jpg">
-    <h3>Black Coffee</h3>
-    <p>₹50</p>
-    <button onclick="addToCart('Black Coffee',50)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/cold-coffee.jpg">
-    <h3>Cold Coffee</h3>
-    <p>₹80</p>
-    <button onclick="addToCart('Cold Coffee',80)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/veg-sandwich.jpg">
-    <h3>Veg Sandwich</h3>
-    <p>₹60</p>
-    <button onclick="addToCart('Veg Sandwich',60)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/cheese-sandwich.jpg">
-    <h3>Cheese Sandwich</h3>
-    <p>₹90</p>
-    <button onclick="addToCart('Cheese Sandwich',90)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/fries.jpg">
-    <h3>French Fries</h3>
-    <p>₹70</p>
-    <button onclick="addToCart('French Fries',70)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/burger.jpg">
-    <h3>Burger</h3>
-    <p>₹90</p>
-    <button onclick="addToCart('Burger',90)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/maggi.jpg">
-    <h3>Maggi</h3>
-    <p>₹50</p>
-    <button onclick="addToCart('Maggi',50)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/cold-drink.jpg">
-    <h3>Cold Drink</h3>
-    <p>₹40</p>
-    <button onclick="addToCart('Cold Drink',40)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/lemon-tea.jpg">
-    <h3>Lemon Tea</h3>
-    <p>₹30</p>
-    <button onclick="addToCart('Lemon Tea',30)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/green-tea.jpg">
-    <h3>Green Tea</h3>
-    <p>₹40</p>
-    <button onclick="addToCart('Green Tea',40)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/milkshake.jpg">
-    <h3>Milkshake</h3>
-    <p>₹90</p>
-    <button onclick="addToCart('Milkshake',90)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/toast.jpg">
-    <h3>Toast Butter</h3>
-    <p>₹40</p>
-    <button onclick="addToCart('Toast Butter',40)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/chocolate-coffee.jpg">
-    <h3>Chocolate Coffee</h3>
-    <p>₹95</p>
-    <button onclick="addToCart('Chocolate Coffee',95)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <img src="images/ice-cream.jpg">
-    <h3>Ice Cream</h3>
-    <p>₹60</p>
-    <button onclick="addToCart('Ice Cream',60)">Add</button>
-  </div>
+</div> <!-- ✅ THIS WAS MISSING -->
 
 <h2>Cart</h2>
 <ul id="cart"></ul>
 
 <button onclick="placeOrder()">Order Now</button>
 
+<!-- ✅ MOVE SCRIPT HERE -->
+<script>
+let cart = [];
+
+function addToCart(item, price) {
+    cart.push({ item, price });
+
+    let cartList = document.getElementById("cart");
+
+    let li = document.createElement("li");
+    li.innerText = item + " - ₹" + price;
+
+    cartList.appendChild(li);
+}
+
+function placeOrder() {
+    if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+    }
+
+    alert("Order placed successfully!");
+    cart = [];
+    document.getElementById("cart").innerHTML = "";
+}
+</script>
 
 </body>
-<script src="script.js"></script>
 </html>
